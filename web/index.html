@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MC Web</title>
+<style>
+  :root { color-scheme: light dark; --bg:#14161a; --fg:#e8eaed; --muted:#9aa0a6; --card:#1e2127; --accent:#5cb85c; --err:#e5534b; }
+  @media (prefers-color-scheme: light) { :root { --bg:#f4f5f7; --fg:#1b1d21; --muted:#5f6368; --card:#fff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width:640px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:1.4rem; margin:0 0 4px; } .sub { color:var(--muted); margin:0 0 24px; }
+  section { background:var(--card); border-radius:10px; padding:16px; margin-bottom:16px; }
+  h2 { font-size:1rem; margin:0 0 12px; }
+  button { background:var(--accent); color:#fff; border:0; border-radius:6px; padding:8px 14px; font:inherit; cursor:pointer; }
+  button:disabled { opacity:.5; cursor:default; }
+  input { font:inherit; padding:7px 9px; border-radius:6px; border:1px solid var(--muted); background:transparent; color:inherit; }
+  .code { font:700 1.6rem ui-monospace, monospace; letter-spacing:.15em; }
+  .err { color:var(--err); } .ok { color:var(--accent); } .muted { color:var(--muted); }
+  pre { overflow:auto; background:rgba(127,127,127,.12); padding:10px; border-radius:6px; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+</style>
+</head>
+<body>
+<main>
+  <h1>MC Web <span id="ver" class="muted"></span></h1>
+  <p class="sub">Clean-room Minecraft: Java Edition client for the browser. Early foundation: sign-in, ownership check, server status.</p>
+
+  <section id="auth">
+    <h2>1. Microsoft account</h2>
+    <div id="auth-out" class="muted">Not signed in.</div>
+    <div class="row" style="margin-top:10px"><button id="signin">Sign in with Microsoft</button></div>
+  </section>
+
+  <section>
+    <h2>2. Server status</h2>
+    <div class="row">
+      <input id="host" placeholder="play.example.net" size="26" value="">
+      <input id="port" placeholder="25565" size="6" value="25565">
+      <button id="ping" disabled>Ping</button>
+    </div>
+    <pre id="ping-out" class="muted">Sign in first (required to use the connection bridge).</pre>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

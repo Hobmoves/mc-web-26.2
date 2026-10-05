@@ -1,0 +1,8 @@
+[package]
+name = "mc-proto"
+version = "0.1.0"
+edition.workspace = true
+license.workspace = true
+description = "Clean-room Minecraft: Java Edition wire protocol primitives (framing, VarInt, handshake/status)"
+
+[dependencies]
